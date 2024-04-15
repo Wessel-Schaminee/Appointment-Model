@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Center div!</title>
+      <link rel="stylesheet" href="assets/style.css">
+   </head>
+   <body>
+      <div class="container">
+         <div class="headtext">
+            <h1>Book an appointment!</h1>
+         </div>
+         <div class="">
+            <form action="getinfo.php" class="bookform" method="POST">
+               <input required type="text" name="naam" placeholder="Naam:" id="naam"> 
+               <select required class="keus" name="selected" id="keusmenu">
+                  <option class="keuse" value="Select">Choose!</option>
+                  <option class="keuse" value="SmallMeeting">Small Meeting €15,-</option>
+                  <option class="keuse" value="BigMeeting">Big Meeting €30,-</option>
+                  <option class="keuse" value="PhoneCall">Phone Call €15,-</option>
+                  <option class="keuse" value="VisitUs">Visit us €FREE,-</option>
+                  <!-- Insert more options if you want! -->
+               </select>
+               <input required type="text" name="tel" placeholder="Telefoon Nummer:" id="tel">
+               <input required type="email" name="email" placeholder="Email:" id="email">
+               <input required type="date" name="date" id="date"> 
+               <input required type="time" name="time" id="time" step="900"> 
+               <div class="div"> <input type="submit" id="sub" value="Reserve!"> </div>
+            </form>
+         </div>
+      </div>
+      <script>
+        //Time Stamps only make a appointment every 15 min (900:60 = 15min!) you can change it if you want!
+        document.getElementById('time').step = 900;
+
+        //Makes the first option not an option!
+        var select = document.getElementById('keusmenu');
+        var firstOption = select.options[0];
+        firstOption.disabled = true; 
+    </script> 
+   </body>
+</html>
